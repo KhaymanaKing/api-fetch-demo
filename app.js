@@ -1,5 +1,8 @@
 // import functions
+const template = document.querySelector('#template');
+const selectEl = document.queryCommandValue ('select');
 
+console.log(template, selectEl);
 // grab DOM elements
 
 // set event listeners 
