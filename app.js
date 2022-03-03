@@ -1,8 +1,8 @@
-import { getPokedex, getStarwars } from './fetch';
+import { getPokedex, getStarwars } from './fetch.js';
 
 // import functions
 const template = document.querySelector('#template');
-const selectEl = document.queryCommandValue ('select');
+const selectEl = document.querySelector('select');
 const list = document.querySelector('#list');
 const errorElement = document.querySelector('#error-message');
 
@@ -12,10 +12,10 @@ const errorElement = document.querySelector('#error-message');
 async function loadPokedex(){
     const pokedex = await getPokedex();
 
-    list.classlist.add('pokemon');
+    list.classList.add('pokemon');
     
     for (let pokemon of pokedex){
-        const clone=template.content.cloneNode(true);
+        const clone = template.content.cloneNode(true);
 
         const name = clone.querySelector('h2');
         const image = clone.querySelector('img');
@@ -23,7 +23,7 @@ async function loadPokedex(){
 
         name.textContent = 'Name ' + pokemon.pokemon;
 
-        type.textContent = 'Egg ' + pokemon.type_1;
+        type.textContent = 'Type ' + pokemon.type_1;
 
         image.src = pokemon.url_image;
         image.alt = pokemon.pokemon;
@@ -33,23 +33,20 @@ async function loadPokedex(){
 }
 
 async function loadStarWars(){
-    const pokedex = await getStarwars();
-
-    list.classlist.add('pokemon');
+    const starwars = await getStarwars();
+    // console.log(starwars);
+    list.classList.add('starwars');
     
-    for (let starwars of starwars){
-        const clone=template.content.cloneNode(true);
+    for (let ship of starwars){
+        const clone = template.content.cloneNode(true);
 
         const name = clone.querySelector('h2');
-        const image = clone.querySelector('img');
         const type = clone.querySelector('h6');
 
-        name.textContent = 'Name ' + starwars.starwars;
+        name.textContent = 'Name ' + ship.name;
 
-        type.textContent = 'Egg ' + pokemon.type_1;
+        type.textContent = 'Model ' + ship.model;
 
-        image.src = pokemon.url_image;
-        image.alt = pokemon.pokemon;
 
         list.appendChild(clone);
     }
@@ -57,13 +54,21 @@ async function loadStarWars(){
 
 // set event listeners 
 
-selectEl.addEventListener('change', async(e) => {
-    const selected = e.target.value;
+selectEl.addEventListener('change', async(event) => {
+    const selected = event.target.value;
+    list.innerHTML = '';
 
-    if (selected === 'pokemon'){
+    if (selected === 'none') {
+        const p = document.createElement('p');
+
+        p.textContent = 'Please Choose';
+
+        errorElement.appendChild(p);
+    } else if (selected === 'pokemon'){
         list.innerHTML = '';
+        errorElement.innerHTML = '';
         await loadPokedex();
-    } else if (selected === 'star-wars') {
+    } else if (selected === 'starwars') {
 
         list.innerHTML = '';
         await loadStarWars();

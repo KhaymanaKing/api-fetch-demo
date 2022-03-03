@@ -1,5 +1,5 @@
 export async function getPokedex(){
-    let url = 'https://pokdex-alchemy.herokuapp.com/api/pokedex';
+    let url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
 
     const resp = await fetch(url);
 
@@ -9,7 +9,7 @@ export async function getPokedex(){
 }
 
 export async function getStarwars(){
-    let url = 'https://swapi.dev/api/starships/9/';
+    let url = 'https://swapi.dev/api/starships/';
 
     const resp = await fetch(url);
 
