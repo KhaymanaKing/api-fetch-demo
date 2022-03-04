@@ -8,17 +8,34 @@
         <link rel="stylesheet" href="./styles/style.css" />
        
 
-        <title>Cool Web</title>
+        <title>What am I doing? API don't know.</title>
     </head>
 
     <body>
         <header>
-            <h1>Cool Web Project</h1>
+            <h1>What am I doing? API don't know.</h1>
         </header>
 
-        <main></main>
+        <main>
+            <template id="template">
+                <h2></h2>
+                <h6></h6>
+                <img src="" alt=""/>
+            </template>
 
-        <footer>&copy; 2021 Aspiring Software Developer</footer>
+            <select name="api" id="api">
+                <option value="none">Please Select an API</option>
+                <option value="starwars">Star Wars</option>
+                <option value="pokemon">Pokemon</option>
+            </select>
+            <div id="error-message"></div>
+
+            <ul id="list">
+
+            </ul>
+        </main>
+
+        <footer>&copy; 2022 Alleged Aspiring Software Developer</footer>
 
         <script type="module" src="./app.js"></script>
     </body>

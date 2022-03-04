@@ -6,13 +6,30 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 
 ## Making a plan
 
-1. **Make a drawing of your app. Simple "wireframes"**
+1. **Make a drawing of your app. Simple "wireframes"** Done
 1. **Once you have a drawing, name the HTML elements you'll need to realize your vision**
+Header - for the top of the page 
+Footer - body of page credit/small site info
+Main - Hold majority of the page
+Body - meat of the page
+Selector? - not sure if it is HTML or JS maybe both but so you can select between SW or PM. 
+
+
 1. **For each HTML element ask: Why do I need this?**
 1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
 1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
 1. **Think about how to validate each of your features according to a Definition of Done**
 1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+
+PLAN
+-get it on netlify
+-create HTML elements
+-functions for fetching from api
+    -sw
+    -pokemon
+-Event listener
+
+
 
 Additional considerations:
 
@@ -24,3 +41,5 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+![wireframe for API extra credit](/api-fetch-demo/assets/api wireframe.jpg)"Wireframe picture for API"
